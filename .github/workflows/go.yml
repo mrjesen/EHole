@@ -22,11 +22,11 @@ jobs:
       run: go mod tidy
 
     - name: Build
-      run: go build -ldflags "-s -w" -o main ./...
+      run: go build -ldflags "-s -w" ./...
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
         name: EHole
         # Directory containing files to upload
-        path: main
+        path: ./*
